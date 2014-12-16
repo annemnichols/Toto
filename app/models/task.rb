@@ -1,3 +1,3 @@
 class Task < ActiveRecord::Base
-	enum priority: %w(high medium low)
+	enum priority: %w(High Medium Low)
 end

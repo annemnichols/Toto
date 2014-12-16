@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   resources :tasks
 
+  get 'new' => 'tasks#new'
+
   # get 'tasks/new'
 
   # get 'tasks/show'
