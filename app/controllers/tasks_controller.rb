@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   def index
-  	@tasks = Task.all.order(:priority)
+  	@tasks = Task.where(:is_completed => false).order(:priority)
   end
 
   def new
@@ -17,9 +17,16 @@ class TasksController < ApplicationController
   	end
   end
 
+  def completed
+    task = Task.find(params[:task])
+    tasks.each {|task| task.update_attributes(:is_completed => true) }
+    @tasks = Task.where(:is_completed => true)
+    # redirect_to root_path
+  end
+
   private
 
   	def task_params
-  		params.require(:task).permit(:title, :category, :priority)
+  		params.require(:task).permit(:title, :category, :priority, :is_completed)
   	end
 end

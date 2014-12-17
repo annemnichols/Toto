@@ -5,6 +5,11 @@ Rails.application.routes.draw do
 
   get 'new' => 'tasks#new'
 
+  post '/completed', to: 'tasks#completed'
+
+  get '/completed' => 'tasks#completed'
+  # put '/incomplete', to: 'tasks#incomplete' as: :complete
+
   # get 'tasks/new'
 
   # get 'tasks/show'

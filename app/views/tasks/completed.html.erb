@@ -1,10 +1,11 @@
+<h1>Completed Totos</h1>
 <% @tasks.each do |task| %>
 	<div class="tasks">
 		<ul>
 			<li>Task: <%= task.title %></li>
 			<li>Category: <%= task.category %></li>
 			<li>Priority: <%= task.priority %></li>
-			<li><%= button_to 'Completed', complete_path(task: task), class: 'btn btn-primary' %></li>
+			<li>Complete: <%= task.is_completed %></li>
 		</ul>
 	</div>
 <% end %>
