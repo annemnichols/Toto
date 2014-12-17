@@ -5,9 +5,9 @@ Rails.application.routes.draw do
 
   get 'new' => 'tasks#new'
 
-  post '/completed', to: 'tasks#completed'
+  post '/complete_task/:id', to: 'tasks#complete_task', as: :complete_task
 
-  get '/completed' => 'tasks#completed'
+  get '/completed' => 'tasks#completed', as: :completed
   # put '/incomplete', to: 'tasks#incomplete' as: :complete
 
   # get 'tasks/new'

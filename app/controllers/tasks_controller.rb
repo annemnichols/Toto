@@ -17,11 +17,14 @@ class TasksController < ApplicationController
   	end
   end
 
+  def complete_task
+    task = Task.find(params[:id])
+    task.update_attributes(:is_completed => true)
+    redirect_to root_path
+  end
+
   def completed
-    task = Task.find(params[:task])
-    tasks.each {|task| task.update_attributes(:is_completed => true) }
     @tasks = Task.where(:is_completed => true)
-    # redirect_to root_path
   end
 
   private

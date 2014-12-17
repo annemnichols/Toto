@@ -4,7 +4,7 @@
 			<li>Task: <%= task.title %></li>
 			<li>Category: <%= task.category %></li>
 			<li>Priority: <%= task.priority %></li>
-			<li><%= button_to 'Completed', complete_path(task: task), class: 'btn btn-primary' %></li>
+			<li><%= button_to 'Completed', complete_task_path(task), class: 'btn btn-primary' %></li>
 		</ul>
 	</div>
 <% end %>
